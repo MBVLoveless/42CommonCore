@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:20:31 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 13:48:06 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/11 10:46:03 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
 
 /* void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

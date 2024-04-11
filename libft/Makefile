@@ -1,6 +1,6 @@
-Library = libft
+LIBRARY = libft
 
-Files = ft_atoi \
+FILES = ft_atoi \
 		ft_bzero \
 		ft_calloc \
 		ft_isalnum \
@@ -25,26 +25,26 @@ Files = ft_atoi \
 		ft_tolower \
 		ft_toupper \
 
-Compiler = cc
+COMPILER = cc
 
-Flags = -Wall -Wextra - Werror
+FLAGS = -Wall -Wextra - Werror
 
-OutputName = $(Library).a
+OUTPUTNAME = $(LIBRARY).a
 
-SrcFiles = $(files:%=%.c)
+SRCFILES = $(files:%=%.c)
 
-ObjFiles = $(files:%=%.o)
+OBJFILES = $(files:%=%.o)
 
-NAME = $(OutputName)
+NAME = $(OUTPUTNAME)
 
 $(NAME):
-	$(Compiler) $(Flags) -c $(SrcFiles) -I./
-	ar -rc $(OutputName) $(ObjFiles)
+	$(COMPILER) $(FLAGS) -c $(SRCFILES) -I./
+	ar -rc $(OUTPUTNAME) $(OBJFILES)
 
 all: $(NAME)
 
 clean:
-	rm -f $(ObjFiles)
+	rm -f $(OBJFILES)
 
 fclean: clean
 	rm -f $(NAME)

@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:55:37 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 14:59:40 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/11 10:47:46 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
 
-	i = ft_strlen(str) - 1; // -1 might be wrong
+	i = ft_strlen(str) - 1;
 	if (c == 0)
 		return (str + i);
 	while (i >= 0)
@@ -27,3 +27,5 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (0);
 }
+
+//line 19: // -1 might be wrong

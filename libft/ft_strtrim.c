@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 15:01:42 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/11 10:44:59 by rsa-varg         ###   ########.fr       */
+/*   Created: 2024/04/11 11:10:30 by rsa-varg          #+#    #+#             */
+/*   Updated: 2024/04/11 12:49:10 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memchr(const void *str, int c, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char		*p;
-	size_t		i;
+	char	*trim;
+	int		i;
+	int		count;
 
 	i = 0;
-	p = (char *)str;
-	while (i < n)
-	{
-		if ((unsigned char)p[i] == (unsigned char)c)
-			return ((char *)str + i);
-		i++;
-	}
-	return (0);
 }

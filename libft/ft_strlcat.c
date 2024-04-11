@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:06:19 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 14:34:09 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/11 10:46:44 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	j = 0;
 	while (dest[i] && i < size)
 		i++;
-	while (src[j] && i + j < size - 1) // or (src[j] && (i + j + 1) < size)
+	while (src[j] && i + j < size - 1)
 	{
 		dest[i + j] = src[j];
 		j++;
@@ -30,3 +30,5 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest[j] = '\0';
 	return (i + ft_strlen(src));
 }
+
+// line 24: or (src[j] && (i + j + 1) < size)
