@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:34:26 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/11 11:44:48 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:24:14 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

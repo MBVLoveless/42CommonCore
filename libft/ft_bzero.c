@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:12:57 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 13:47:50 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:20:34 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_bzero(void *str, size_t n)
 {

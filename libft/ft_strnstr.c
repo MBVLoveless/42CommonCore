@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:24:45 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 15:36:11 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:23:48 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:06:58 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/08 15:18:28 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:20:59 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isdigit(int arg)
 {

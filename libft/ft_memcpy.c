@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 13:20:31 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/11 10:46:03 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:21:27 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

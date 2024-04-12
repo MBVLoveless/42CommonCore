@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:14:59 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/11 16:40:04 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:21:03 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char	*s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 #endif

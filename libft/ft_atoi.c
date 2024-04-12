@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:37:29 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 15:50:17 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:20:21 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

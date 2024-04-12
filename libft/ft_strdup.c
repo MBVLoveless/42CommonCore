@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:50:36 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 15:50:59 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:41:21 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {

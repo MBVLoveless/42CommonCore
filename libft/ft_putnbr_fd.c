@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:34:51 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/11 16:39:52 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:24:41 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -30,8 +30,8 @@ void	ft_putnbr_fd(int n, int fd)
 		}
 		else
 		{
-			ft_putnbr_fd(n / 10);
-			ft_putnbr_fd(n % 10);
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n % 10, fd);
 		}
 	}
 }

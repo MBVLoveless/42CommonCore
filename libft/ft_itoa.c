@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:17:48 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/11 12:48:59 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:21:12 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_count_int(int n)
 {

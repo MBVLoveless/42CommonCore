@@ -6,21 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:56:49 by ricky             #+#    #+#             */
-/*   Updated: 2024/04/11 14:30:54 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:14:35 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

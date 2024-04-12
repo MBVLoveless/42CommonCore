@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:12:55 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/08 15:18:33 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:20:45 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isalnum(int arg)
 {

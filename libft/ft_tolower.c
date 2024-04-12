@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:43:00 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 14:43:28 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:24:09 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

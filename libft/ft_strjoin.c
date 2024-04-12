@@ -6,13 +6,13 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 16:20:48 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/09 16:39:01 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:13:13 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new;
 	int		i;

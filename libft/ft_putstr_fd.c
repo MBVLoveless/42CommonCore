@@ -6,11 +6,11 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:35:40 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/11 16:32:23 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/12 12:21:59 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char	*s, int fd)
 {
