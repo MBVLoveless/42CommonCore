@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:43:42 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/12 12:22:55 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:29:48 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strchr(const char *str, int c)
 			return ((char *)str + i);
 		i++;
 	}
+	if (str[i] == '\0' && c == '\0')
+		return ((char *)str + i);
 	return (0);
 }

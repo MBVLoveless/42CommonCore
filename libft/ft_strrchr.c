@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 14:55:37 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/12 12:23:53 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:33:01 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *str, int c)
 
 	i = ft_strlen(str) - 1;
 	if (c == 0)
-		return ((char *)str + i);
+		return ((char *)str + i + 1);
 	while (i >= 0)
 	{
 		if (str[i] == c)

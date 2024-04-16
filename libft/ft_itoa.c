@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:17:48 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/12 12:21:12 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:05:58 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ char	*ft_itoa(int n)
 	char	*result;
 	int		count;
 
+	if (n == 0)
+		return ("0");
 	count = ft_count_int(n);
-	result = malloc(sizeof(char) * count + 1);
+	result = malloc(sizeof(char) * (count + 1));
 	if (!result)
 		return (0);
 	result[count] = '\0';
@@ -52,10 +54,7 @@ char	*ft_itoa(int n)
 		n = n / 10;
 	}
 	if (n <= 9)
-	{
-		count--;
-		result[count] = n + 48;
-	}
+		result[--count] = n + 48;
 	return (result);
 }
 
