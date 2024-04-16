@@ -18,14 +18,12 @@ char	*ft_strrchr(const char *str, int c)
 
 	i = ft_strlen(str) - 1;
 	if (c == 0)
-		return (str + i);
+		return ((char *)str + i);
 	while (i >= 0)
 	{
 		if (str[i] == c)
-			return (str + i);
+			return ((char *)str + i);
 		i--;
 	}
 	return (0);
 }
-
-//line 19: // -1 might be wrong

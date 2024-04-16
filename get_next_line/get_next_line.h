@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ricky <ricky@student.42.fr>                #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 14:43:42 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/12 12:22:55 by rsa-varg         ###   ########.fr       */
+/*   Created: 2024-04-16 09:29:38 by ricky             #+#    #+#             */
+/*   Updated: 2024-04-16 09:29:38 by ricky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_strchr(const char *str, int c)
-{
-	int	i;
-	int	l;
+#include <stdlib.h>
+#include <unistd.h>
 
-	i = 0;
-	l = ft_strlen(str);
-	while (i < l)
-	{
-		if (str[i] == c)
-			return ((char *)str + i);
-		i++;
-	}
-	return (0);
-}
+char    *get_next_line(int fd);
+static char	*ft_strdup(const char *src);
+
+#endif

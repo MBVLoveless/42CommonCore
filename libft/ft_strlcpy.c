@@ -33,5 +33,3 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		i++;
 	return (i);
 }
-
-//line 22: // or increase value of i until src reaches end bcs diff variables

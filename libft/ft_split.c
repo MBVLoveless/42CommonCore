@@ -10,84 +10,81 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "libft.h"
+
+static int	ft_word_count(char const *s, char c)
+{
+	int	count;
+
+	count = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s && *s != c)
+			s++;
+	}
+	return (count);
+}
+
+static char	*ft_strndup(const char *str, int begin, int end)
+{
+	char	*new;
+	int		i;
+
+	i = 0;
+	new = malloc(sizeof(*str) * (end - begin + 1));
+	if (!new)
+		return (0);
+	while (str[begin] && begin < end)
+	{
+		new[i] = str[begin];
+		i++;
+		begin++;
+	}
+	new[i] = '\0';
+	return (new);
+}
+
+static char	**ft_create_split(char **array, char const *s, char c, int arg)
+{
+	int	x;
+	int	end;
+	int	begin;
+
+	x = 0;
+	end = 0;
+	begin = 0;
+	while (arg < ft_word_count(s, c))
+	{
+		while (s[x] == c && s[x++])
+		{
+			end++;
+			begin++;
+		}
+		while (s[x] != c && s[x++])
+			end++;
+		array[arg] = ft_strndup(s, begin, end);
+		x++;
+		arg++;
+		end++;
+		begin = x;
+	}
+	array[arg] = NULL;
+	return (array);
+}
 
 char	**ft_split(char const *s, char c)
 {
-	char	**new;
-	int		i;
-	int		n;
-	int		arg;
-	int		temp;
+	char			**new;
+	int				arg;
 
-	i = -1;
 	arg = 0;
-	new = (char **)malloc(sizeof(char *) * (strlen(s) + 1));
+	new = malloc(sizeof (char *) * ft_word_count(s, c) + 1);
 	if (!new)
 		return (0);
-	while (s[++i])
-	{
-		n = 0;
-		temp = i;
-		while (s[temp] != c && s[temp])
-			temp++;
-		new[arg] = (char *)malloc(sizeof(char) * (temp - i + 1));
-		if (!new[arg])
-			return (0);
-		while (s[i] != c && s[i])
-			new[arg][n++] = s[i++];
-		new[arg][n] = 0;
-		arg++;
-	}
-	new[arg] = NULL;
+	new = ft_create_split(new, s, c, arg);
 	return (new);
 }
-
-int	main(void)
-{
-	char	*str = "  this is the split function";
-	char	**array = ft_split(str, ' ');
-	int	i = 0;
-	while(array[i] != NULL)
-	{
-		printf("%s\n", array[i]);
-		free(array[i]);
-		i++;
-	}
-	free(array);
-	return (0);
-}
-
-/* char	**ft_split(char const *s, char c)
-{
-	char	**new;
-	int		i;
-	int		n;
-	int		arg;
-	int		temp;
-
-	i = -1;
-	arg = 0;
-	new = (char **)malloc(sizeof(char *) * (strlen(s) + 1));
-	if (!new)
-		return (0);
-	while (s[++i])
-	{
-		n = 0;
-		temp = i;
-		while (s[temp] != c && s[temp])
-			temp++;
-		new[arg] = (char *)malloc(sizeof(char) * (temp - i + 1));
-		if (!new[arg])
-			return (0);
-		while (s[i] != c && s[i])
-			new[arg][n++] = s[i++];
-		new[arg][n] = 0;
-		arg++;
-	}
-	new[arg] = NULL;
-	return (new);
-} */

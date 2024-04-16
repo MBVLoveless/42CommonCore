@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: ricky <ricky@student.42.fr>                #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 14:43:42 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/12 12:22:55 by rsa-varg         ###   ########.fr       */
+/*   Created: 2024-04-12 21:14:49 by ricky             #+#    #+#             */
+/*   Updated: 2024-04-12 21:14:49 by ricky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	i;
-	int	l;
-
-	i = 0;
-	l = ft_strlen(str);
-	while (i < l)
+	if (!lst)
+		return ;
+	while (lst)
 	{
-		if (str[i] == c)
-			return ((char *)str + i);
-		i++;
+		(*f)(lst->content);
+		lst = lst->next;
 	}
-	return (0);
 }

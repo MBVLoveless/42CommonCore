@@ -1,5 +1,3 @@
-LIBRARY = libft
-
 FILES = ft_atoi \
 		ft_bzero \
 		ft_calloc \
@@ -15,7 +13,6 @@ FILES = ft_atoi \
 		ft_memset \
 		ft_strchr \
 		ft_strdup \
-		ft_strjoin \
 		ft_strlcat \
 		ft_strlcpy \
 		ft_strlen \
@@ -36,28 +33,48 @@ FILES = ft_atoi \
 		ft_putendl_fd \
 		ft_putnbr_fd \
 
+BONUS = ft_lstnew \
+		ft_lstadd_front \
+		ft_lstsize \
+		ft_lstlast \
+		ft_lstadd_back \
+		ft_lstdelone \
+		ft_lstclear \
+		ft_lstiter \
+		ft_lstmap \
+
 COMPILER = cc
 
-FLAGS = -Wall -Wextra - Werror
+FLAGS = -Wall -Wextra -Werror -I.
 
-OUTPUTNAME = $(LIBRARY).a
+SRCFILES = $(addsuffix .c,$(FILES))
 
-SRCFILES = $(files:%=%.c)
+OBJFILES = $(addsuffix .o,$(FILES))
 
-OBJFILES = $(files:%=%.o)
+BONUS_SRC = $(addsuffix .c,$(BONUS))
 
-NAME = $(OUTPUTNAME)
+BONUS_OBJ = $(addsuffix .o,$(BONUS))
 
-$(NAME):
-	$(COMPILER) $(FLAGS) -c $(SRCFILES) -I./
-	ar -rc $(OUTPUTNAME) $(OBJFILES)
+NAME = libft.a
+
+$(OBJFILES): %.o: %.c
+	$(COMPILER) $(FLAGS) -c $< -o $@
+
+$(BONUS_OBJ): %.o: %.c
+	$(COMPILER) $(FLAGS) -c $< -o $@
+
+$(NAME): $(OBJFILES)
+	ar rcs $(NAME) $(OBJFILES)
 
 all: $(NAME)
 
 clean:
-	rm -f $(OBJFILES)
+	rm -f $(OBJFILES) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus: $(OBJFILES) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJFILES) $(BONUS_OBJ)
