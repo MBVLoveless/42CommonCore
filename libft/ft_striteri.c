@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:54:47 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/16 15:51:31 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:12:44 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
-	i = -1;
-	while (s[++i])
-		f(i, s);
+	i = 0;
+	if (!f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

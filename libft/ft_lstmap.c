@@ -6,7 +6,7 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 21:18:20 by ricky             #+#    #+#             */
-/*   Updated: 2024/04/16 15:55:53 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:01:57 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*new_node;
 
-	if (!lst || !f)
+	if (!del || !f)
 		return (0);
 	new_list = NULL;
 	while (lst)
@@ -26,11 +26,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!new_node)
 		{
 			ft_lstclear(&new_list, del);
+			lst = NULL;
 			return (0);
 		}
 		ft_lstadd_back(&new_list, new_node);
 		lst = lst->next;
 	}
-	new_list->next = NULL;
 	return (new_list);
 }

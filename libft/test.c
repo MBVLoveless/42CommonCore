@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
-//#include <fcntl.h> - for fd functions (open)
+#include <fcntl.h> // for fd functions (open)
 
 /* int main(void)
 {
@@ -24,7 +24,7 @@
 /* int main(void)
 {
     char    src[] = "palavra";
-    char    *new = ft_memchr(src, 'z', 5);
+    char    *new = ft_memchr(src, 'v', 2);
     if (!new)
         printf("Not found.\n");
     else
@@ -37,7 +37,7 @@
 {
     while (lst)
     {
-        printf("%s -> ", (char *)lst->content); // Assuming content is a string
+        printf("%s -> ", (char *)lst->content);
         lst = lst->next;
     }
     printf("NULL\n");
@@ -63,7 +63,6 @@ int main(void)
     // Create a pointer to the head of the linked list
     t_list *head = node1;
     
-    // Add nodes to the linked list using ft_lstadd_back
     ft_lstadd_front(&head, node3);
     ft_lstadd_front(&head, node2);
     
@@ -79,42 +78,7 @@ int main(void)
 } */
 //ft_lstadd_back/front test
 
-/* void print_str_array(char **arr)
-{
-    for (int i = 0; arr[i] != NULL; i++)
-    {
-        printf("%s\n", arr[i]);
-    }
-}
-
-int main(void)
-{
-    char *str = "";
-    char **result = ft_split(str, ' ');
-
-    if (result)
-    {
-        printf("Original string: %s\n", str);
-        printf("Resulting strings after splitting:\n");
-        print_str_array(result);
-        
-        // Free memory allocated for result
-        for (int i = 0; result[i] != NULL; i++)
-        {
-            free(result[i]);
-        }
-        free(result);
-    }
-    else
-    {
-        printf("Error: ft_split returned NULL\n");
-    }
-
-    return 0;
-} */
-//ft_split test
-
-void    print_content(void *content) {
+/* void    print_content(void *content) {
     printf("%s\n", (char *)content);
 }
 
@@ -148,5 +112,59 @@ int main(void) {
     free(node4);
     free(node5);
 
+    return 0;
+} */
+//ft_lstiter test
+
+/* int	main(void)
+{
+	char *res = ft_itoa(-2147483648LL);
+	printf("%s\n", res);
+	return (0);
+} */
+
+#include<stdio.h>
+
+static int	ft_word_count(char const *s, char c)
+{
+	int	count;
+
+	count = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s && *s != c)
+			s++;
+	}
+	return (count);
+}
+
+int main(int argc, char* argv[])
+{
+    (void)argc;
+    (void)argv;
+    char* str = "azazazaza";
+    char delimiter = 'z';
+
+    char** tabstr = ft_split(str, delimiter);
+    int i = 0;
+
+    if (tabstr == NULL) {
+        printf("Splitting failed.\n");
+        return 1; // or handle the error accordingly
+    }
+
+    while (tabstr[i])
+    {
+        printf("str: %s\n", tabstr[i]);
+        free(tabstr[i]);
+        i++;
+    }
+
+    free(tabstr);
+    tabstr = NULL;
     return 0;
 }

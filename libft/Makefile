@@ -57,6 +57,8 @@ BONUS_OBJ = $(addsuffix .o,$(BONUS))
 
 NAME = libft.a
 
+all: $(NAME)
+
 $(OBJFILES): %.o: %.c
 	$(COMPILER) $(FLAGS) -c $< -o $@
 
@@ -65,8 +67,6 @@ $(BONUS_OBJ): %.o: %.c
 
 $(NAME): $(OBJFILES)
 	ar rcs $(NAME) $(OBJFILES)
-
-all: $(NAME)
 
 clean:
 	rm -f $(OBJFILES) $(BONUS_OBJ)

@@ -6,25 +6,28 @@
 /*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:17:48 by rsa-varg          #+#    #+#             */
-/*   Updated: 2024/04/16 16:05:58 by rsa-varg         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:33:34 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_count_int(int n)
 {
-	int	count;
+	int		count;
+	long	z;
 
 	count = 0;
-	if (n < 0)
+	z = n;
+	if (z < 0)
 	{
-		n *= -1;
+		z *= -1;
 		count ++;
 	}
-	while (n != 0)
+	while (z > 0)
 	{
-		n = n / 10;
+		z = z / 10;
 		count++;
 	}
 	return (count);
@@ -34,27 +37,27 @@ char	*ft_itoa(int n)
 {
 	char	*result;
 	int		count;
+	long	q;
 
+	q = n;
 	if (n == 0)
 		return ("0");
 	count = ft_count_int(n);
-	result = malloc(sizeof(char) * (count + 1));
+	result = malloc(sizeof(char) * (count) + 1);
 	if (!result)
 		return (0);
 	result[count] = '\0';
-	if (n < 0)
+	if (q < 0)
 	{
-		n *= -1;
+		q *= -1;
 		result[0] = '-';
 	}
-	while (n > 9)
+	while (q > 0)
 	{
 		count--;
-		result[count] = (n % 10) + 48;
-		n = n / 10;
+		result[count] = q % 10 + 48;
+		q = q / 10;
 	}
-	if (n <= 9)
-		result[--count] = n + 48;
 	return (result);
 }
 
@@ -65,3 +68,12 @@ char	*ft_itoa(int n)
 	printf("%s\n", str);
 	return (0);
 } */
+
+/* 	while (n > 9)
+	{
+		count--;
+		result[count] = (n % 10) + 48;
+		n = n / 10;
+	}
+	if (n <= 9)
+		result[--count] = n + 48; */
