@@ -17,6 +17,5 @@
 #include <unistd.h>
 
 char    *get_next_line(int fd);
-static char	*ft_strdup(const char *src);
 
 #endif
