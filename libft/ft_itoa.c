@@ -33,6 +33,12 @@ static int	ft_count_int(int n)
 	return (count);
 }
 
+static void	ft_negative(long *q, char *result)
+{
+	*q *= -1;
+	*result = '-';
+}
+
 char	*ft_itoa(int n)
 {
 	char	*result;
@@ -41,17 +47,18 @@ char	*ft_itoa(int n)
 
 	q = n;
 	if (n == 0)
-		return ("0");
+	{
+		result = malloc(sizeof(char *));
+		result[0] = '0';
+		return (result);
+	}
 	count = ft_count_int(n);
 	result = malloc(sizeof(char) * (count) + 1);
 	if (!result)
 		return (0);
 	result[count] = '\0';
 	if (q < 0)
-	{
-		q *= -1;
-		result[0] = '-';
-	}
+		ft_negative(&q, result);
 	while (q > 0)
 	{
 		count--;

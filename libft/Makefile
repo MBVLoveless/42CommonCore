@@ -78,3 +78,5 @@ re: fclean all
 
 bonus: $(OBJFILES) $(BONUS_OBJ)
 	ar rcs $(NAME) $(OBJFILES) $(BONUS_OBJ)
+
+.PHONY: all clean fclean re bonus
