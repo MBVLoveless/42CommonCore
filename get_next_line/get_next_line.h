@@ -13,9 +13,22 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-char    *get_next_line(int fd);
+typedef struct s_State
+{
+	char	*next_line;
+	size_t	buffer_size_copy;
+	ssize_t	bytes_read;
+	size_t	total_bytes;
+	char	*temp;
+}	t_State;
+
+char	*get_next_line(int fd);
+void	start_state(t_State *state);
+void	copy_buffer(char *src, char *dest, size_t size);
+int		read_line(int fd, t_State *state);
+int		line_finish(t_State *state);
 
 #endif
