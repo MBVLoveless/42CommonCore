@@ -1,82 +1,80 @@
-FILES = ft_atoi \
+NAME = libft.a
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
+RM = rm -f
+
+FILES = ft_memset \
 		ft_bzero \
-		ft_calloc \
-		ft_isalnum \
-		ft_isalpha \
-		ft_isascii \
-		ft_isdigit \
-		ft_isprint \
-		ft_memchr \
-		ft_memcmp \
 		ft_memcpy \
 		ft_memmove \
-		ft_memset \
-		ft_strchr \
-		ft_strdup \
-		ft_strlcat \
-		ft_strlcpy \
+		ft_memchr \
+		ft_memcmp \
 		ft_strlen \
-		ft_strncmp \
-		ft_strnstr \
+		ft_strlcpy \
+		ft_strlcat \
+		ft_strchr \
 		ft_strrchr \
-		ft_tolower \
+		ft_strnstr \
+		ft_strncmp \
+		ft_atoi \
+		ft_isalpha \
+		ft_isdigit \
+		ft_isalnum \
+		ft_isascii \
+		ft_isprint \
 		ft_toupper \
+		ft_tolower \
+		ft_calloc \
+		ft_strdup \
 		ft_substr \
 		ft_strjoin \
 		ft_strtrim \
 		ft_split \
 		ft_itoa \
-		ft_strmapi \
 		ft_striteri \
+		ft_strmapi \
 		ft_putchar_fd \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
 
-BONUS = ft_lstnew \
-		ft_lstadd_front \
-		ft_lstsize \
-		ft_lstlast \
-		ft_lstadd_back \
-		ft_lstdelone \
-		ft_lstclear \
-		ft_lstiter \
-		ft_lstmap \
+FILES_B = 	ft_lstnew \
+	  		ft_lstadd_front \
+	  		ft_lstsize \
+	  		ft_lstlast \
+	  		ft_lstadd_back \
+	  		ft_lstdelone \
+	  		ft_lstclear \
+	  		ft_lstiter \
+	  		ft_lstmap
 
-COMPILER = cc
+SRCS_DIR = ./
+SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
 
-FLAGS = -Wall -Wextra -Werror -I.
-
-SRCFILES = $(addsuffix .c,$(FILES))
-
-OBJFILES = $(addsuffix .o,$(FILES))
-
-BONUS_SRC = $(addsuffix .c,$(BONUS))
-
-BONUS_OBJ = $(addsuffix .o,$(BONUS))
-
-NAME = libft.a
+OBJS_DIR = ./
+OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
 all: $(NAME)
 
-$(OBJFILES): %.o: %.c
-	$(COMPILER) $(FLAGS) -c $< -o $@
+.o: $(SRCS)
+	$(CC) $(CFLAGS) -c -I . -o $@ $<
 
-$(BONUS_OBJ): %.o: %.c
-	$(COMPILER) $(FLAGS) -c $< -o $@
+$(NAME): $(OBJS)
+	$(AR) $@ $^
 
-$(NAME): $(OBJFILES)
-	ar rcs $(NAME) $(OBJFILES)
+bonus: $(NAME) $(OBJS_B)
+	$(AR) $(NAME) $^
 
 clean:
-	rm -f $(OBJFILES) $(BONUS_OBJ)
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
-re: fclean all
+re: clean all
 
-bonus: $(OBJFILES) $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJFILES) $(BONUS_OBJ)
-
-.PHONY: all clean fclean re bonus
+.PHONY: bonus all clean fclean re
