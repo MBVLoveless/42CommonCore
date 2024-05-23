@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ricky <ricky@student.42.fr>                #+#  +:+       +#+        */
+/*   By: rsa-varg <rsa-varg@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-04-30 04:34:51 by ricky             #+#    #+#             */
-/*   Updated: 2024-04-30 04:34:51 by ricky            ###   ########.fr       */
+/*   Created: 2024/04/30 04:34:51 by ricky             #+#    #+#             */
+/*   Updated: 2024/05/23 13:47:06 by rsa-varg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	read_line(int fd, t_State *state)
 			break ;
 		if (state->total_bytes >= state->buffer_size_copy)
 		{
-			state->temp = malloc(1 * (2 * state->buffer_size_copy + 1));
+			state->temp = malloc(2 * state->buffer_size_copy + 1);
 			if (!state->temp)
 			{
 				free(state->next_line);
